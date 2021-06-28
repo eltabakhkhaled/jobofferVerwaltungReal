@@ -85,33 +85,6 @@ def delete_user(u_id):
         json_object = json.dumps(json_dict)
         return Response(json_object, status=400, mimetype='application/json')
 
-
-@app.route('/joboffer', methods=['GET'])
-def get_joboffers():
-    cursor = mysql.connect().cursor()
-    cursor.execute("SELECT * FROM j_joboffer")
-    result = cursor.fetchall()
-    cursor.close()
-    return jsonify(result)
-
-
-@app.route('/user', methods=['GET'])
-def get_users():
-    cursor = mysql.connect().cursor()
-    cursor.execute("SELECT * FROM u_user")
-    result = cursor.fetchall()
-    cursor.close()
-    return jsonify(result)
-
-
-@app.route('/user/<u_id>', methods=['GET'])
-def get_user(u_id):
-    cursor = mysql.connect().cursor()
-    cursor.execute("SELECT * FROM u_user WHERE u_id = " + str(u_id))
-    json_object = json.dumps(cursor.fetchall())
-    return Response(json_object, status=200, mimetype='application/json')
-
-
 @app.route('/login', methods=['GET'])
 def check_login():
     username = request.args.get("username")
