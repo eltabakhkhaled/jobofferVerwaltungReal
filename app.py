@@ -55,43 +55,6 @@ def get_useredit():
 def currency():
     return render_template('currency.html')
 
-
-
-@app.route('/joboffer', methods=['POST'])
-def add_joboffer():
-    content = json.loads(request.data)
-    if not content["timestamp"]:
-        content["timestamp"] = "NULL"
-
-    sqlcommand = "INSERT INTO j_joboffer(`j_timestamp`,`j_title`,`j_category`) VALUES ('%s','%s','%s');" % (
-        content["timestamp"], content["title"], content["category"])
-    print(sqlcommand)
-    cursor = mysql.connect().cursor()
-    cursor.execute(sqlcommand)
-    cursor.connection.commit()
-    json_object = json.dumps({'success': True, 'new_id': cursor.lastrowid})
-    return Response(json_object, status=200, mimetype='application/json')
-
-
-@app.route('/joboffer/<j_id>/<u_id>', methods=['PUT'])
-def edit_joboffer(j_id, u_id):
-    cursor = mysql.connect().cursor()
-    cursor.connection.commit()
-    cursor.execute('select * from j_joboffer where j_id=' + str(j_id))
-    cursor.connection.commit()
-    result = cursor.fetchall()
-
-    if not result:
-        return json.dumps({'success': False}), 400, {'ContentType': 'application/json'}
-    else:
-        cursor.execute(
-            "UPDATE j_joboffer SET j_u_id = %s WHERE j_id=%s",
-            (u_id, j_id))
-        cursor.connection.commit()
-
-    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
-
-
 @app.route('/user/delete/<u_id>', methods=['DELETE'])
 def delete_user(u_id):
     cursor = mysql.connect().cursor()
