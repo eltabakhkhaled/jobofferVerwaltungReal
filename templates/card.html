@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppingcart - Moneye</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <img src="Screenshot%20(44).jpg" alt="Moneye logo" width="125px" >
+        </div>
+        <nav>
+            <ul id="MenuItems">
+              <button onclick="window.location.href='/'">Home</button>
+                    <button onclick="window.location.href='/card'">Card</button>
+                    <button onclick="window.location.href='/userload'">All User</button>
+                    <button onclick="window.location.href='/profile'">User</button>
+                    <button onclick="window.location.href='/currency'">Currency Exchange</button>
+                    <button onclick="window.location.href='/product_details'">Detailed Joboffers</button>
+                    <button onclick="window.location.href='/products'">Joboffers</button>
+            </ul>
+        </nav>
+        <img src="ShoppingCart.jpg" alt="Cart" width="30px" height="30px">
+        <img src="" alt="Menu" class="menu-icon" onclick="menutoggle()">
+    </div>
+</div>
+
+<!--------cart items details---------->
+
+<div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Offer</th>
+            <th>Subtotal</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="1db62bb2ce1c1c892fe88eb35d173c6b.jpg" alt="lawn">
+                    <div>
+                        <p>Job Offer: Mow my lawn</p>
+                        <small>Price: 30€</small>
+                        <a href="">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td>Price: 30€</td>
+        </tr>
+        <tr>
+            <th>Offer</th>
+            <th>Subtotal</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="Figure-A2-Island-text-Neutral-version-English.jpg" alt="lawn">
+                    <div>
+                        <p>Job Offer: Translation</p>
+                        <small>Price: 25€</small>
+                        <a href="">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td>Price: 30€</td>
+        </tr>
+    </table>
+
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>Price: 55€</td>
+            </tr>
+            <tr>
+                <td>Company Fees</td>
+                <td>Price: -10€</td>
+            </tr>
+            <tr>
+                <td>Subtotal</td>
+                <td>Price: 45€</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!------------footer------------>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android or IOS</p>
+                <div class="app-logo">
+                    <img src="" alt="AppstoreImage">
+                    <img src="" alt="AppstoreImage">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="Screenshot%20(44).jpg" alt="Logo" width="125px">
+                <p>Make Money fast and easy</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2021 - Moneye&Co.</p>
+    </div>
+</div>
+<!------------------js toggle menu------------->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight ="0px";
+
+    function menutoggle(){
+        if (MenuItems.style.maxHeight == "0px"){
+            MenuItems.style.maxHeight = "200px"
+        }
+        else {
+            MenuItems.style.maxHeight == "0px"
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+*{
+    margin: 0; /* creates space around element */
+    padding: 0; /* creates space within element */
+    box-sizing: border-box; /* so everything stays inside the window */
+}
+
+body{
+    font-family: 'KoHo', sans-serif; /* sets font for whole body */
+}
+.navbar{
+    display: flex; /* puts every element after it in the same line */
+    align-items: center;
+    padding: 20px;
+}
+nav{
+    flex: 1; /* with this all elements get the same width */
+    text-align: right;
+}
+nav ul{
+    display: inline; /* puts the elements of the list in one line */
+    list-style-type: none;
+}
+nav ul li{
+    display: inline;
+    margin-right: 20px; /* so each element is spaced out a bit */
+}
+a{
+    text-decoration: none; /* deletes the lines under anchor tags */
+    color: black;
+}
+p{
+    color: black;
+}
+.container{ /* sets the layout for the header and the footer */
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* wrap --> elements will go to the next row if necessary*/
+    justify-content: space-around; /* elements will have space around them */
+}
+.col{
+    flex-basis: 50%; /* sets the width of the flex-item */
+    min-width: 300px;
+    margin-bottom: 300px;
+}
+.col img{
+    max-width: 100%;
+    padding: 50px 0;
+}
+.col h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.btn{
+    display: inline-block; /* when it is only inline it ignores the margins */
+    background: blue;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px; /* rounds up the button border */
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: aqua;
+}
+.header{
+    background: radial-gradient(blue,white);
+}
+.header .row{
+    margin-top: 70px;
+}
+.categories{
+    margin: 70px 0;
+}
+.col-2{
+    flex-basis: 30%; /*because it is for 3 elements */
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+.col-2 img {
+    width: 100%;
+}
+.small-container{ /* sets layout for elements inside the page except header and footer */
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.col-3{
+    flex-basis: 25%; /* because it is for 4 elements */
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-3 img{
+    width: 100%;
+}
+.col-3:hover{
+    transform: translateY(-5px);
+}
+.col-3 p{
+    font-size: 14px;
+}
+
+.title{ /* sets look of the titles */
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: aqua;
+}
+
+.title::after{ /* creates a line under the titles */
+    content: '';
+    background: blue;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h4{
+    color: black;
+    font-weight: normal;
+}
+
+.rating .fa{ /* sets the color of the stars */
+    color: blue;
+}
+
+.offer{
+    background: radial-gradient(blue,white);
+    margin: 80px;
+    padding: 30px 0;
+}
+
+.col .offer-img{
+    padding: 50px;
+}
+
+small{
+    color: black;
+}
+.review{
+    padding: 100px;
+}
+.review .col-2{
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,1);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.review .col-2 img{
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.review .col-2:hover{
+    transform: translateY(-10px);
+}
+.review .col-2 h3{
+    font-weight: 600;
+    color: blue;
+    font-size: 16px;
+}
+.brands{
+    margin: 100px auto;
+}
+.col-4{
+    width: 160px;
+}
+.col-4 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+.col-4 img:hover{
+    filter: grayscale(0%);
+}
+.footer{ /* sets layout for the footer */
+    background: black;
+    color: white;
+    font-size: 14px;
+    padding: 60px 0 30px;
+}
+.footer p{
+    color:white;
+}
+.footer h3{
+    color: white;
+    margin-bottom: 20px;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col-1{
+    flex-basis: 30%;
+}
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+.footer-col-3, .footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
+.app-logo{
+    margin-top: 20px;
+}
+.app-logo img{
+    width: 140px;
+}
+.copyright{
+    text-align: center;
+}
+.menu-icon{
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+.off{ /* spaces out the title and the select tag */
+    justify-content: space-between;
+    margin: 50px -375px 25px;
+}
+select{ /* creates the layout of the border */
+    border: 1px solid blue;
+    padding: 5px;
+}
+select:focus{ /* so it stays blue */
+    outline: none;
+}
+.page-btn{
+    margin: 0 auto 80px; /* space on the bottom*/
+}
+.page-btn span{
+    display: inline-block; /* so it minds the margin*/
+    border: 1px solid blue;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center; /* So it is in the center of the box */
+    line-height: 40px;
+    cursor: pointer;
+}
+.page-btn span:hover{ /* colors the box blue and makes the text white when hovered over */
+    background: blue;
+    color: white;
+}
+.single-product{
+    margin-top: 50px;
+}
+.single-product .col{
+    padding: 20px;
+}
+.single-product .col img{
+    padding: 0;
+}
+.single-product h4{
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.small-img-row{
+    display: flex;
+    justify-content: space-between;
+}
+.small-img-col{
+    flex-basis: 25%;
+    cursor: pointer;
+}
+.row-2{
+    justify-content: space-between;
+    margin: 50px auto 25px;
+}
+.cart-page{
+    margin: 80px auto;
+}
+table{
+    width: 100%; /* so if fills the whole page*/
+    border-collapse: collapse;
+}
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+th{
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background: blue;
+    font-weight: normal;
+}
+td{
+    padding: 10px 5px;
+}
+td a{
+    color: blue;
+    font-size: 12px;
+}
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.total-price{
+    display: flex;
+    justify-content: flex-end; /* aligns it to the end */
+}
+.total-price table{ /* puts a line above the total price table*/
+    border-top: 3px solid blue;
+    width: 100%;
+    max-width: 300px;
+}
+td:last-child{ /* last-child sets layout for the last element with that tag (here td)*/
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
+.account-page{
+    padding: 50px 0;
+    background: radial-gradient(blue, white);
+}
+.form-container{
+    background: white;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,1);
+    overflow: hidden;
+}
+.form-container span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: blue;
+    cursor: pointer;
+    width: 100%;
+    margin: 0 15px 0;
+}
+.form-btn{
+    display: inline-block;
+}
+.form-container form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+form input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px blue;
+}
+form .btn{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+form .btn:focus{
+    outline: none;
+}
+#LoginForm{
+    left: -300px;
+}
+#RegForm{
+    left: 0;
+}
+form a{
+    font-size: 10px;
+}
+#indicator{
+    width: 100px;
+    border: none;
+    background: blue;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+
+@media only screen and (max-width: 800px){ /* lets a menu page pop up when on a smaller screen */
+    nav ul{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background: black;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: white;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width:600px){ /* so that elements in page look centered and better on a smaller screen*/
+    .row{
+        text-align: center;
+    }
+    .col, .col-2, .col-3{
+        flex-basis: 100%;
+    }
+    .single-product .row{
+        text-align: left;
+    }
+    .single-product .col{
+        padding: 20px 0;
+    }
+    .single-product h1{
+        font-size: 26px;
+        line-height: 22px;
+    }
+}
