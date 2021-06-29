@@ -18,7 +18,7 @@ app.config['MYSQL_DATABASE_DB'] = 'joboffer'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
-
+##route ruft defintions auf und retunred html file
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -56,17 +56,14 @@ def currency():
 
 
 
-
-
-
 @app.route('/user/delete/<u_id>', methods=['DELETE'])
 def delete_user(u_id):
-    cursor = mysql.connect().cursor()
-    cursor.execute("DELETE FROM u_user WHERE u_id = " + u_id)
+    cursor = mysql.connect().cursor()                       ##mysql-connector is used to execute statements to communicate with the MySQL database
+    cursor.execute("DELETE FROM u_user WHERE u_id = " + u_id)       ##sql command to execute
     cursor.connection.commit()
-    deleted_row_count = cursor.rowcount
+    deleted_row_count = cursor.rowcount             ##If zeile 66 (Statusmeldung)
     cursor.close()
-    if deleted_row_count == 1:
+    if deleted_row_count == 1:              ##how many rows are deleted
         json_dict = {
             'success': True,
             'message': 'User with id ' + u_id + ' deleted'
@@ -94,12 +91,12 @@ def delete_user(u_id):
 def get_users():
     cursor = mysql.connect().cursor()
     cursor.execute("SELECT * FROM u_user")
-    result = cursor.fetchall()
+    result = cursor.fetchall()          ##fetches all (or all remaining) rows
     cursor.close()
     return jsonify(result)
 
 
-@app.route('/user/<u_id>', methods=['GET'])
+@app.route('/user/<u_id>', methods=['GET'])         ##Todo
 def get_user(u_id):
     cursor = mysql.connect().cursor()
     cursor.execute("SELECT * FROM u_user WHERE u_id = " + str(u_id))
@@ -109,7 +106,7 @@ def get_user(u_id):
 
 @app.route('/login', methods=['GET'])
 def check_login():
-    username = request.args.get("username")
+    username = request.args.get("username")             ##username and password in URL
     password = request.args.get("password")
     cursor = mysql.connect().cursor()
     sqlcommand = "SELECT * FROM u_user WHERE u_username =  '%s' AND u_password = '%s';" % (
